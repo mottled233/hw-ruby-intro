@@ -113,6 +113,8 @@ you write the code, watch the test fail, fill in the code and save the code file
 then watch the test pass!
 
 * Try pairing using the [one-undermanship pair programming style](http://www.agileventures.org/remote-pair-programming/pair-programming-protocols)
+* 
+so I trying at here。
 
 
 
