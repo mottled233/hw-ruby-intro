@@ -3,33 +3,66 @@
 # Part 1
 
 def sum arr
-  # YOUR CODE HERE
+  return arr.reduce(:+) unless arr.none?
+  return 0
 end
 
+
 def max_2_sum arr
-  # YOUR CODE HERE
+  return arr.max_by(2){|x| x}.reduce(:+) unless arr.none?
+  return 0
 end
 
 def sum_to_n? arr, n
-  # YOUR CODE HERE
+  arr.any? do |x|
+    arr.any?{|y| y!=x && y+x==n}
+  end
 end
 
 # Part 2
 
 def hello(name)
-  # YOUR CODE HERE
+  "Hello, " + name
 end
 
 def starts_with_consonant? s
-  # YOUR CODE HERE
+  (/^[^aeiou,\d,\W]/i =~ s)==0
 end
 
 def binary_multiple_of_4? s
-  # YOUR CODE HERE
+  /[^1,0]/ =~ s || s.length<1 ? false : s.to_i(2)%4==0
 end
+
 
 # Part 3
 
 class BookInStock
-# YOUR CODE HERE
+  
+  def initialize(isbn, price)
+    if(isbn.length<1||price<=0)
+      raise ArgumentError
+    end
+    @price = price
+    @isbn = isbn
+  end
+  
+  def price
+    @price
+  end
+  
+  def price=(val)
+    @price = val
+  end
+    
+  def isbn
+    @isbn
+  end
+    
+  def isbn=(val)
+    @isbn = val
+  end
+  
+  def price_as_string
+    format("$%.2f",@price)
+  end
 end
