@@ -15,7 +15,7 @@ end
 
 def sum_to_n? arr, n
   arr.any? do |x|
-    arr.any?{|y| y!=x && y+x==n}
+    arr.any?{|y| x!=y && x+y==n}
   end
 end
 
